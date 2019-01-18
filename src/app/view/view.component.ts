@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Student,Stud,Students } from '../stud';
+import { Students,Student } from '../student';
 
 @Component({
   selector: 'app-view',
@@ -9,26 +9,27 @@ import { Student,Stud,Students } from '../stud';
 export class ViewComponent implements OnInit {
   
 
-  students = Student;
-  thisStud: Stud;
-  editStud: boolean = false;
+  studentsmany = Students;
+  thisStudent: Student;
+  editStudent: boolean = false;
+  students: any;
   constructor() { }
 
   ngOnInit() {
   }
-  deleteStudent(stud): void {
-    this.editStud = false;
-    const index = this.students.indexOf(stud);
+  deleteStudents(student): void {
+    this.editStudent = false;
+    const index = this.studentsmany.indexOf(student);
     if( window.confirm("Are you sure?")){
-      this.students.splice(index, 1);
+      this.studentsmany.splice(index, 1);
     }
   }
-  updateStudent(stud: Stud) :void {
-    this.editStud = true;
-    this.thisStud = stud;
+  updateStudents(student: Student):void {
+    this.editStudent = true;
+    this.thisStudent = student;
   }
-  updStudent(updateForm): void {
-    this.thisStud = null;
-    this.editStud = false;
+  updStudents(): void {
+    this.thisStudent = null;
+    this.editStudent = false;
   }
 }

@@ -8,43 +8,43 @@
     <th></th>
     <th></th>
   </tr>
-  <tr *ngFor="let stud of students">
-    <td>{{stud.id}}</td>
-    <td>{{stud.firstName}}</td>
-    <td>{{stud.lastName}}</td>
-    <td>{{stud.dept}}</td>
+  <tr *ngFor="let student of studentsmany">
+    <td>{{student.id}}</td>
+    <td>{{student.firstName}}</td>
+    <td>{{student.lastName}}</td>
+    <td>{{student.dept}}</td>
     <td>
-      <button class="btn-dark btn" (click)="deleteStudent(stud)">Delete</button>
+      <button class="btn-dark btn" (click)="deleteStudents(student)">Delete</button>
     </td>
     <td>
-      <button class="btn btn-dark" (click)="updateStudent(stud)">Edit</button>
+      <button class="btn btn-dark" (click)="updateStudents(student)">Edit</button>
     </td>
   </tr>
 </table>
-<div *ngIf="thisStud">
-  <form #updateForm="ngForm" (ngSubmit)="updStudent(updateForm)">
+<div *ngIf="thisStudent">
+  <form #updateForm="ngForm" (ngSubmit)="updStudents(updateForm)">
 
     <div class="form-group">
       <label for="ID">ID: </label>
-      <input type="number" class="form-control" id="ID" required
-      [(ngModel)]="thisStud.id" name="ID ">
+      <input type="text" class="form-control" id="ID" required
+      [(ngModel)]="thisStudent.id" name="ID ">
     </div>
       <div class="form-group">
         <label for="firstName">First Name: </label>
         <input type="text" class="form-control" id="firstName" required
-        [(ngModel)]="thisStud.firstName" name="firstName">
+        [(ngModel)]="thisStudent.firstName" name="firstName">
       </div>
 
       <div class="form-group">
         <label for="lastName">Last Name: </label>
         <input type="text" class="form-control" id="lastName" required
-        [(ngModel)]="thisStud.lastName" name="lastName">
+        [(ngModel)]="thisStudent.lastName" name="lastName">
       </div>
   
       <div class="form-group">
         <label for="dept">Department: </label>
         <input type="text" class="form-control" id="dept" required
-        [(ngModel)]="thisStud.dept" name="dept">
+        [(ngModel)]="thisStudent.dept" name="dept">
       </div>
   
       <div>

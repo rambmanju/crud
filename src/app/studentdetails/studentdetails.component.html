@@ -2,7 +2,7 @@ Student Details:
 
 <div class="container">
     <h1>Student form</h1>
-    <form #studentform="ngForm" (ngSubmit)="onSubmit(studentform)">
+    <form #studentsform="ngForm" (ngSubmit)="onSubmit(studentsform)">
       <div class="form-group" [class.has-error]="id.invalid && id.touched" [class.has-success]="id.valid">
         <label for="id">ID: </label>
         <input type="text" class="form-control" id="id" required
@@ -40,9 +40,9 @@ Student Details:
         </div>
       </div>
       <div class="form-actions">
-        <button type="submit" id="submitbtn" class="btn btn-success" [disabled]="studentform.invalid">Submit</button>
+        <button type="submit" id="submitbtn" class="btn btn-success" [disabled]="studentsform.invalid">Submit</button>
       </div>
     </form>
-    <div>{{studentform.value | json}}</div>
+    <div>{{studentsform.value | json}}</div>
     
   </div>
